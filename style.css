@@ -1,0 +1,200 @@
+* {
+    font-family: 'Nunito';
+}
+
+body {
+    margin: 0;
+    color: white;
+    background: #130f0d;
+}
+
+header {
+    margin-bottom: 16px;
+    padding: 0 16px;
+    border: 1px solid #fd951f11;
+    color: #fd951fcc;
+    background: #141316;
+}
+
+.boards {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.board {
+    border-radius: 4px;
+    border: 1px solid #fd951f11;
+    background: #141316;
+}
+
+.board h3 {
+    color: #fd951fcc;
+    margin: 0;
+    padding: 16px;
+}
+
+.dropzone {
+    min-width: 282px;
+    min-height: 200px;
+    padding: 16px;
+}
+
+.card, .modal-content {
+    width: 250px;
+    margin: 25px 0;
+    padding: 16px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 16px;
+    background: #1A1A1C;
+    box-shadow: 0 2px 2px -1px #fd951fCC;
+}
+
+.status {
+    width: 30px;
+    height: 8px;
+    margin-bottom: 16px;
+    border-radius: 8px;
+    background: gray;
+}
+
+.highlight {
+    background: #FD951f08;
+}
+
+.card, .dropzone {
+    transition: .4s;
+}
+
+.is-dragging {
+    opacity: .3;
+    cursor: move;
+}
+
+.over {
+    background: #4CD14711;
+}
+
+.add {
+    width: 50px;
+    height: 50px;
+    font-size: 25px;
+    font-weight: bold;
+    color: ##1A1A1C;
+    cursor: pointer;
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+    border: none;
+    border-radius: 100%;
+    background: #fd951fCC;    
+}
+
+.modal-container {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    background: #000000cc;
+    display: none;
+}
+
+.modal-container.show {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    width: 50vw;
+    max-width: 35em;
+    animation: modal .5s;
+    position: relative;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+    color: #fd951fcc;
+}
+
+.modal-content input {
+    width: 80%;
+    height: 25px;
+    border: none;
+    padding: 0 5px;
+    border-radius: 2px;
+}
+
+.modal-content .addCard {
+    width: 15%;
+    height: 25px;
+    font-weight: bold;
+    color: #fd951fcc;
+    border: none;
+    background: #4CD14711;
+    box-shadow: 0 1px 1px #fd951fCC;
+}
+
+.modal-content .exit {
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 4px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #fd951fcc;
+    background: #1A1A1C;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.modal-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 16px;
+}
+
+.color {
+    display: flex;
+    align-items: center;
+}
+
+.color label {
+    margin-left: 10px;
+}
+
+#colors {
+    height: 35px;
+    width: 30px;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+}
+
+@keyframes modal {
+    to {
+        opacity: 0;
+        transform: translate3d(0, -50px, 0);
+    }
+
+    from {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@media (max-width: 1024px){
+    .boards {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .board {
+        margin-bottom: 16px;
+    }
+}
